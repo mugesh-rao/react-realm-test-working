@@ -87,22 +87,6 @@ export function ItemListView() {
     [realm, user],
   );
   // toggleItemIsComplete() updates an Item with a particular _id to be 'completed'
-  const toggleItemIsComplete = useCallback(
-    (id: BSON.ObjectId) => {
-      // if the realm exists, get the Item with a particular _id and update it's 'isCompleted' field
-      const item = realm.objectForPrimaryKey(Item, id); // search for a realm object with a primary key that is an objectId
-      if (item) {
-        if (item.owner_id !== user?.id) {
-          Alert.alert("You can't modify someone else's task!");
-        } else {
-          realm.write(() => {
-            item.isComplete = !item.isComplete;
-          });
-        }
-      }
-    },
-    [realm, user],
-  );
 
   return (
     <SafeAreaProvider>
@@ -145,17 +129,6 @@ export function ItemListView() {
               <ListItem.Title style={styles.itemTitle}>
                 {item.summary}
               </ListItem.Title>
-              <ListItem.Subtitle style={styles.itemSubtitle}>
-                {item.owner_id === user?.id ? '(mine)' : ''}
-              </ListItem.Subtitle>
-              <ListItem.CheckBox
-                checked={item.isComplete}
-                checkedColor={COLORS.primary}
-                iconType="material"
-                checkedIcon="check-box"
-                uncheckedIcon="check-box-outline-blank"
-                onPress={() => toggleItemIsComplete(item._id)}
-              />
               <Button
                 type="clear"
                 onPress={() => deleteItem(item._id)}
