@@ -1,0 +1,9 @@
+{
+    "appId": "testapp-tt-bkswq",
+    "appUrl": "https://realm.mongodb.com/groups/64bb94695a1d9a30fa4d3064/apps/64bf5167eec1a0adde30b67d",
+    "baseUrl": "https://realm.mongodb.com",
+    "clientApiBaseUrl": "https://us-east-1.aws.realm.mongodb.com",
+    "dataApiBaseUrl": "https://us-east-1.aws.data.mongodb-api.com",
+    "dataExplorerLink": "https://cloud.mongodb.com/links/64bb94695a1d9a30fa4d3064/explorer/testapp/database/collection/find",
+    "dataSourceName": "mongodb-atlas"
+}
