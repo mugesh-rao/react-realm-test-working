@@ -199,5 +199,6 @@ const styles = StyleSheet.create({
   toggleText: {
     flex: 1,
     fontSize: 16,
+    textDecorationColor:'black',
   },
 });

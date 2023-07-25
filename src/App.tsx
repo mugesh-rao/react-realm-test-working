@@ -5,7 +5,6 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {AppProvider, UserProvider} from '@realm/react';
 
-import {appId, baseUrl} from '../atlasConfig.json';
 import {WelcomeView} from './WelcomeView';
 import {ItemListView} from './ItemListView';
 import {realmContext} from './RealmContext';
@@ -13,6 +12,8 @@ import {realmContext} from './RealmContext';
 const {RealmProvider} = realmContext;
 
 const Stack = createStackNavigator();
+const appId = 'testapp-tt-bkswq';
+const baseUrl = 'https://realm.mongodb.com';
 
 const AppWrapper = () => {
   return (
@@ -48,7 +49,7 @@ const App = () => {
           <NavigationContainer>
             <Stack.Navigator>
               <Stack.Screen
-                name="Your To-Do List"
+                name="Rao ToDO"
                 component={ItemListView}
                 options={{
                   headerTitleAlign: 'center',
